@@ -33,7 +33,7 @@
 
         <dependency>
             <groupId>cn.wanfeng</groupId>
-            <artifactId>sp-core</artifactId>
+            <artifactId>xhs-core</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>

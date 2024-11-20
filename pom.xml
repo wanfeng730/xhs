@@ -12,9 +12,14 @@
     <groupId>cn.wanfeng</groupId>
     <artifactId>xhs</artifactId>
     <version>1.0</version>
+    <packaging>pom</packaging>
 
     <name>xhs</name>
     <description>xhs</description>
+    <modules>
+        <module>xhs-web</module>
+        <module>xhs-core</module>
+    </modules>
 
     <properties>
         <java.version>21</java.version>

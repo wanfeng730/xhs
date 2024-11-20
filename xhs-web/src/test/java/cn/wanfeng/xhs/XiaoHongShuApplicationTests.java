@@ -1,8 +1,7 @@
-package cn.wanfeng.xhsweb;
+package cn.wanfeng.xhs;
 
 import cn.wanfeng.proto.util.LogUtils;
 import cn.wanfeng.sp.config.SimpleProtoConfig;
-import com.alibaba.fastjson.JSON;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +13,7 @@ public class XiaoHongShuApplicationTests {
     private SimpleProtoConfig simpleProtoConfig;
 
     @Test
-    public void testEnable(){
+    public void baseTest(){
         LogUtils.info("SimpleProtoConfig.dataTable:{}", SimpleProtoConfig.dataTable);
         LogUtils.info("SimpleProtoConfig.settingsTable:{}", SimpleProtoConfig.settingsTable);
     }

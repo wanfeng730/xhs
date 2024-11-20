@@ -1,4 +1,4 @@
-package cn.wanfeng.xhsweb;
+package cn.wanfeng.xhs;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
