@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/xhs-web/logs/
+/logs/

@@ -75,8 +75,7 @@ mybatis-plus:
 # 日志配置
 logging:
   file:
-    path: ./logs
+    path: ../logs
   level:
     root: INFO
-    cn.wanfeng.sp.base.domain.SpBaseObject: DEBUG
 
