@@ -1,17 +1,22 @@
 # 修改此配置后，需同步更新SimpleProtoConfig的初始化方法
 simpleproto:
-  # 数据库连接配置
+  # 数据库连接配置(PostgreSQL、）
   dataSourceDriver: org.postgresql.Driver
-  dataSourceUrl: jdbc:postgresql://localhost:5432/${spring.application.name}?currentSchema=${spring.profiles.active}&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+  dataSourceUrl: jdbc:postgresql://42.192.108.249:5432/${spring.application.name}?currentSchema=${spring.profiles.active}&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
   dataSourceUsername: postgres
   dataSourcePassword: Wanfeng730
-  # ElasticSearch配置
-  #   8.x版本根据官方文档部署的需要使用https
-  esUris: https://localhost:9200
-  esUsername: elastic
-  esPassword: Wanfeng730
+  # OpenSearch 连接配置
+  opensearchHostScheme: http
+  opensearchHost: 42.192.108.249
+  opensearchPort: 9200
+  opensearchUsername: admin
+  opensearchPassword: Wanfeng730
+  # OpenSearch jdbc配置
+  opensearchJdbcDriver: com.amazon.opendistroforelasticsearch.jdbc.Driver
+  opensearchJdbcUrl: jdbc:elasticsearch://http://42.192.108.249:9200
+  opensearchJdbcUseSSL: false
   # Redis连接配置
-  redisHost: localhost
+  redisHost: 42.192.108.249
   redisPort: 6379
   redisPassword: Wanfeng730
   redisDatabase: 0
@@ -24,7 +29,9 @@ simpleproto:
 
 ######################################################
 server:
-  port: 7301
+  servlet:
+    context-path: /xhs
+
 spring:
   application:
     name: xhs
@@ -32,10 +39,17 @@ spring:
     active: dev
   # Postgres数据源
   datasource:
-    driver-class-name: ${simpleproto.dataSourceDriver}
-    url: ${simpleproto.dataSourceUrl}
-    username: ${simpleproto.dataSourceUsername}
-    password: ${simpleproto.dataSourcePassword}
+    postgres:
+      driver-class-name: ${simpleproto.dataSourceDriver}
+      url: ${simpleproto.dataSourceUrl}
+      username: ${simpleproto.dataSourceUsername}
+      password: ${simpleproto.dataSourcePassword}
+    search:
+      driver-class-name: ${simpleproto.opensearchJdbcDriver}
+      url: ${simpleproto.opensearchJdbcUrl}
+      username: ${simpleproto.opensearchUsername}
+      password: ${simpleproto.opensearchPassword}
+      useSSL: ${simpleproto.opensearchJdbcUseSSL}
   data:
     redis:
       host: ${simpleproto.redisHost}
@@ -75,7 +89,8 @@ mybatis-plus:
 # 日志配置
 logging:
   file:
-    path: ../logs
+    path: ./logs
   level:
-    root: INFO
+    root: info
+    org.springframework: warn
 

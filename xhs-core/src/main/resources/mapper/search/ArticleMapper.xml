@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wanfeng.xhs.article.mapper.search.ArticleMapper">
+
+    <sql id="all_field">
+        id, type, name, create_date, modify_date, is_delete,
+        title, description, author, like_count, label_list, ip_city, article_status
+    </sql>
+
+    <resultMap id="articleResultMap" type="cn.wanfeng.xhs.article.object.ArticleDO">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="type" property="type"/>
+        <result column="create_date" property="createDate"/>
+        <result column="modify_date" property="modifyDate"/>
+        <result column="is_delete" property="isDelete"/>
+
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+        <result column="author" property="author"/>
+        <result column="like_count" property="likeCount"/>
+        <result column="label_list" property="labelList"/>
+        <result column="ip_city" property="ipCity"/>
+        <result column="article_status" property="articleStatus"/>
+    </resultMap>
+
+    <select id="findAllDescCreateDate" resultMap="articleResultMap">
+        select
+        <include refid="all_field"/>
+        from xhs_data
+        order by create_date desc
+    </select>
+
+
+
+
+</mapper>

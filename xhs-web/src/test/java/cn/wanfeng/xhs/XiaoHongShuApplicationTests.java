@@ -1,7 +1,7 @@
 package cn.wanfeng.xhs;
 
 import cn.wanfeng.proto.util.LogUtils;
-import cn.wanfeng.sp.config.SimpleProtoConfig;
+import cn.wanfeng.sp.config.custom.SimpleProtoConfig;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
