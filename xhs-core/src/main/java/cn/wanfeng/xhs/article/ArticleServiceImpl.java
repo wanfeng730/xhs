@@ -1,6 +1,7 @@
 package cn.wanfeng.xhs.article;
 
 
+import cn.wanfeng.proto.util.LogUtils;
 import cn.wanfeng.sp.session.SpSession;
 import cn.wanfeng.xhs.article.mapper.search.ArticleMapper;
 import cn.wanfeng.xhs.article.object.Article;
@@ -30,8 +31,9 @@ public class ArticleServiceImpl implements ArticleService{
     public void create() {
         List<String> labelList = Arrays.asList("约会穿搭", "黑丝穿搭");
         String labelListJson = JSON.toJSONString(labelList);
-        Article article = new Article(spSession, "救命好喜欢这种感觉的穿搭！shui懂！！", 18003L, labelListJson, "杭州", "幂式穿搭真的氛围感的神！！！", "晚风730");
+        Article article = new Article(spSession, "救命好喜欢这种感觉的穿搭！shui懂！！", 18003L, labelListJson, "杭州", null, "晚风730");
         article.store();
+        LogUtils.info("文章[{}]保存成功", article.getTitle());
     }
 
     @Override

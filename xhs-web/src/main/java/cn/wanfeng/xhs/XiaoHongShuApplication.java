@@ -1,5 +1,6 @@
 package cn.wanfeng.xhs;
 
+import cn.wanfeng.xhs.util.ResourceFileUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,8 +17,11 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ComponentScan(basePackages = {"cn.wanfeng.**"})
 public class XiaoHongShuApplication {
 
+    private static final String BOOT_START_DISPLAY_FILE_PATH = "bootStartDisplay.txt";
+
     public static void main(String[] args) {
         SpringApplication.run(XiaoHongShuApplication.class, args);
+        ResourceFileUtils.printTxtFileContent(BOOT_START_DISPLAY_FILE_PATH);
     }
 
 }
