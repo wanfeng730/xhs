@@ -1,13 +1,16 @@
 package cn.wanfeng.xhs.article;
 
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.wanfeng.proto.util.LogUtils;
 import cn.wanfeng.sp.session.SpSession;
 import cn.wanfeng.xhs.article.mapper.search.ArticleMapper;
 import cn.wanfeng.xhs.article.object.Article;
 import cn.wanfeng.xhs.article.object.ArticleDO;
+import cn.wanfeng.xhs.article.object.ArticleDTO;
 import com.alibaba.fastjson.JSON;
 import jakarta.annotation.Resource;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import javax.swing.border.TitledBorder;
@@ -39,5 +42,11 @@ public class ArticleServiceImpl implements ArticleService{
     @Override
     public List<ArticleDO> getAll() {
         return articleMapper.findAllDescCreateDate();
+    }
+
+    @Override
+    public ArticleDTO detail(Long id) {
+        Article article = new Article(spSession, id);
+        return BeanUtil.toBean(article, ArticleDTO.class);
     }
 }

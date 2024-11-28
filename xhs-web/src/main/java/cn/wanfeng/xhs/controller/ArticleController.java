@@ -4,12 +4,11 @@ package cn.wanfeng.xhs.controller;
 import cn.wanfeng.xhs.article.ArticleService;
 import cn.wanfeng.xhs.article.object.Article;
 import cn.wanfeng.xhs.article.object.ArticleDO;
+import cn.wanfeng.xhs.article.object.ArticleDTO;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -33,5 +32,10 @@ public class ArticleController {
     @PostMapping("/get_all")
     public List<ArticleDO> getAll(){
         return articleService.getAll();
+    }
+
+    @GetMapping("/detail")
+    public ArticleDTO detail(@RequestParam @NotNull Long id){
+        return articleService.detail(id);
     }
 }
