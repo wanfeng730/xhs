@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ConfigurationPropertiesScan
 @EnableRetry
 @EnableAsync
-@MapperScan(basePackages = {"cn.wanfeng.sp.**.mapper"})
+@MapperScan(basePackages = {"cn.wanfeng.**.mapper"})
 @ComponentScan(basePackages = {"cn.wanfeng.**"})
 public class XiaoHongShuApplication {
 

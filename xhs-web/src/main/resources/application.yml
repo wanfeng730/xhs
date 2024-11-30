@@ -81,8 +81,6 @@ mybatis-plus:
     use-generated-keys: true
     default-executor-type: REUSE
     use-actual-param-name: true
-    interceptor:
-      - cn.wanfeng.sp.interceptor.MybatisPlusTableNameInterceptor
   # mapper xml文件扫描路径
   mapper-locations: classpath:mapper/postgres/*Mapper.xml
 
@@ -94,6 +92,7 @@ logging:
     root: info
     org.springframework.boot: warn
     org.springframework.web: warn
+    cn.wanfeng.xhs.article.mapper.search: debug
 
 
 
