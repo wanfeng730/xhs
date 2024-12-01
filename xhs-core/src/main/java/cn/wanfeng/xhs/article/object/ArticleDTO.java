@@ -1,8 +1,6 @@
 package cn.wanfeng.xhs.article.object;
 
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.util.Date;
@@ -10,8 +8,6 @@ import java.util.Date;
 /**
  * @date: 2024-11-28 22:27
  * @author: luozh.wanfeng
- * @description:
- * @since:
  */
 @Data
 public class ArticleDTO {

@@ -2,8 +2,6 @@ package cn.wanfeng.xhs.controller;
 
 
 import cn.wanfeng.xhs.article.ArticleService;
-import cn.wanfeng.xhs.article.object.Article;
-import cn.wanfeng.xhs.article.object.ArticleDO;
 import cn.wanfeng.xhs.article.object.ArticleDTO;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +28,7 @@ public class ArticleController {
     }
 
     @PostMapping("/get_all")
-    public List<ArticleDO> getAll(){
+    public List<ArticleDTO> getAll() {
         return articleService.getAll();
     }
 

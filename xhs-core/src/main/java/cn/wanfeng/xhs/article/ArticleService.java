@@ -1,8 +1,6 @@
 package cn.wanfeng.xhs.article;
 
-import cn.wanfeng.xhs.article.object.ArticleDO;
 import cn.wanfeng.xhs.article.object.ArticleDTO;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -14,7 +12,7 @@ public interface ArticleService {
 
     void create();
 
-    List<ArticleDO> getAll();
+    List<ArticleDTO> getAll();
 
     ArticleDTO detail(Long id);
 

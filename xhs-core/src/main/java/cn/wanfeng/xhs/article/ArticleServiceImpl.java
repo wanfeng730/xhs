@@ -1,9 +1,9 @@
 package cn.wanfeng.xhs.article;
 
 
-import cn.hutool.core.bean.BeanUtil;
 import cn.wanfeng.sp.session.SpSession;
 import cn.wanfeng.sp.util.LogUtils;
+import cn.wanfeng.sp.util.ObjectConvertUtils;
 import cn.wanfeng.xhs.article.mapper.search.ArticleMapper;
 import cn.wanfeng.xhs.article.object.Article;
 import cn.wanfeng.xhs.article.object.ArticleDO;
@@ -38,13 +38,14 @@ public class ArticleServiceImpl implements ArticleService{
     }
 
     @Override
-    public List<ArticleDO> getAll() {
-        return articleMapper.findAllDescCreateDate();
+    public List<ArticleDTO> getAll() {
+        List<ArticleDO> articleDOList = articleMapper.findAllDescCreateDate();
+        return ObjectConvertUtils.convertList(articleDOList, ArticleDTO.class);
     }
 
     @Override
     public ArticleDTO detail(Long id) {
         Article article = new Article(spSession, id);
-        return BeanUtil.toBean(article, ArticleDTO.class);
+        return ObjectConvertUtils.convertObject(article, ArticleDTO.class);
     }
 }
