@@ -2,18 +2,16 @@ package cn.wanfeng.xhs.article;
 
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.wanfeng.proto.util.LogUtils;
 import cn.wanfeng.sp.session.SpSession;
+import cn.wanfeng.sp.util.LogUtils;
 import cn.wanfeng.xhs.article.mapper.search.ArticleMapper;
 import cn.wanfeng.xhs.article.object.Article;
 import cn.wanfeng.xhs.article.object.ArticleDO;
 import cn.wanfeng.xhs.article.object.ArticleDTO;
 import com.alibaba.fastjson.JSON;
 import jakarta.annotation.Resource;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import javax.swing.border.TitledBorder;
 import java.util.Arrays;
 import java.util.List;
 

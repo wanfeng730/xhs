@@ -1,7 +1,7 @@
 package cn.wanfeng.xhs.util;
 
 
-import cn.wanfeng.proto.util.LogUtils;
+import cn.wanfeng.sp.util.LogUtils;
 import org.springframework.core.io.DefaultResourceLoader;
 
 import java.io.BufferedReader;
