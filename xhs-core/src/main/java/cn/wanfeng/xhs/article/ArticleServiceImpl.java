@@ -4,6 +4,7 @@ package cn.wanfeng.xhs.article;
 import cn.wanfeng.sp.session.SpSession;
 import cn.wanfeng.sp.util.LogUtils;
 import cn.wanfeng.sp.util.ObjectConvertUtils;
+import cn.wanfeng.xhs.article.command.ArticleDetailCommand;
 import cn.wanfeng.xhs.article.mapper.search.ArticleMapper;
 import cn.wanfeng.xhs.article.object.Article;
 import cn.wanfeng.xhs.article.object.ArticleDO;
@@ -47,5 +48,10 @@ public class ArticleServiceImpl implements ArticleService{
     public ArticleDTO detail(Long id) {
         Article article = new Article(spSession, id);
         return ObjectConvertUtils.convertObject(article, ArticleDTO.class);
+    }
+
+    @Override
+    public ArticleDTO detailCommand(ArticleDetailCommand command) {
+        return detail(command.getId());
     }
 }

@@ -31,6 +31,7 @@ simpleproto:
 server:
   servlet:
     context-path: /xhs
+  port: 7300
 
 spring:
   application:

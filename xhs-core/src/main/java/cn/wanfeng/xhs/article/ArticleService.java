@@ -1,5 +1,6 @@
 package cn.wanfeng.xhs.article;
 
+import cn.wanfeng.xhs.article.command.ArticleDetailCommand;
 import cn.wanfeng.xhs.article.object.ArticleDTO;
 
 import java.util.List;
@@ -16,4 +17,5 @@ public interface ArticleService {
 
     ArticleDTO detail(Long id);
 
+    ArticleDTO detailCommand(ArticleDetailCommand command);
 }

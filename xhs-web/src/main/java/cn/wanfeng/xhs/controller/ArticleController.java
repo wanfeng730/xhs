@@ -2,10 +2,12 @@ package cn.wanfeng.xhs.controller;
 
 
 import cn.wanfeng.xhs.article.ArticleService;
+import cn.wanfeng.xhs.article.command.ArticleDetailCommand;
 import cn.wanfeng.xhs.article.object.ArticleDTO;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -36,4 +38,10 @@ public class ArticleController {
     public ArticleDTO detail(@RequestParam @NotNull Long id){
         return articleService.detail(id);
     }
+
+    @PostMapping("/detail_command")
+    public ArticleDTO detailCommand(@RequestBody @Valid ArticleDetailCommand command) {
+        return articleService.detailCommand(command);
+    }
+
 }
