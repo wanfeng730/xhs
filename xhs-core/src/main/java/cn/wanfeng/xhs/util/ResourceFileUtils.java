@@ -1,7 +1,7 @@
 package cn.wanfeng.xhs.util;
 
 
-import cn.wanfeng.sp.util.LogUtils;
+import cn.wanfeng.sp.util.LogUtil;
 import org.springframework.core.io.DefaultResourceLoader;
 
 import java.io.BufferedReader;
@@ -31,7 +31,7 @@ public class ResourceFileUtils {
                 System.out.println(line);
             }
         } catch (IOException e) {
-            LogUtils.error("打印启动显示图失败", e);
+            LogUtil.error("打印启动显示图失败", e);
         }
     }
 }

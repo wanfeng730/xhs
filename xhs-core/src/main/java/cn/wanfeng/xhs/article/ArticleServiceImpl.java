@@ -2,7 +2,7 @@ package cn.wanfeng.xhs.article;
 
 
 import cn.wanfeng.sp.session.SpSession;
-import cn.wanfeng.sp.util.LogUtils;
+import cn.wanfeng.sp.util.LogUtil;
 import cn.wanfeng.sp.util.ObjectConvertUtils;
 import cn.wanfeng.xhs.article.command.ArticleDetailCommand;
 import cn.wanfeng.xhs.article.mapper.search.ArticleMapper;
@@ -35,7 +35,7 @@ public class ArticleServiceImpl implements ArticleService{
         String labelListJson = JSON.toJSONString(labelList);
         Article article = new Article(spSession, "救命好喜欢这种感觉的穿搭！shui懂！！", 18003L, labelListJson, "杭州", null, "晚风730");
         article.store();
-        LogUtils.info("文章[{}]保存成功", article.getTitle());
+        LogUtil.info("文章[{}]保存成功", article.getTitle());
     }
 
     @Override
