@@ -3,7 +3,7 @@ package cn.wanfeng.xhs.article.object;
 
 import cn.wanfeng.sp.anno.ProtoField;
 import cn.wanfeng.sp.anno.Type;
-import cn.wanfeng.sp.api.base.domain.SpBaseObject;
+import cn.wanfeng.sp.api.domain.SpBaseObject;
 import cn.wanfeng.sp.session.SpSession;
 import cn.wanfeng.xhs.article.enums.ArticleStatus;
 import cn.wanfeng.xhs.common.TypeConstants;
