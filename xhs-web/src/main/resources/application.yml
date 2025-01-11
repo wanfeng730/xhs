@@ -26,12 +26,27 @@ simpleproto:
   dataTable: xhs_data
   # 业务设置表名
   settingsTable: xhs_settings
+  # 文件对象存储连接配置
+  fileStorageType: MinIO
+  fileStorageEndPoint: http://42.192.108.249:9000
+  fileStorageAccessKey: minio
+  fileStorageSecretKey: Wanfeng730
+  fileStorageBucket: simpleproto
+  # Swagger UI配置
+  swaggerScanPackages: cn.wanfeng.xhs.controller,cn.wanfeng.sp.api.controller
+  swaggerTitle: XHS-API 接口文档
+  swaggerAuthor: 晚风
+  swaggerAuthorUrl: 晚风的URL
+  swaggerAuthorEmail: 2580330397@qq.com
+  swaggerDescription: XHS-API 接口文档
+  swaggerVersion: 1.1
+
 
 ######################################################
 server:
   servlet:
     context-path: /xhs
-  port: 7300
+  port: 7301
 
 spring:
   application:
@@ -94,6 +109,13 @@ logging:
     org.springframework.boot: warn
     org.springframework.web: warn
     cn.wanfeng.xhs.article.mapper.search: debug
+
+dubbo:
+  application:
+    name: xhs
+  protocol:
+    name: dubbo
+    port: 50051
 
 
 

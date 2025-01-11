@@ -1,6 +1,7 @@
 package cn.wanfeng.xhs;
 
 import cn.wanfeng.xhs.util.ResourceFileUtils;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ConfigurationPropertiesScan
 @EnableRetry
 @EnableAsync
+@EnableDubbo
 @MapperScan(basePackages = {"cn.wanfeng.**.mapper"})
 @ComponentScan(basePackages = {"cn.wanfeng.**"})
 public class XiaoHongShuApplication {

@@ -7,14 +7,13 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>xhs-core</artifactId>
-    <name>xhs-core</name>
+    <artifactId>xhs-facade</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>cn.wanfeng</groupId>
-            <artifactId>sp-core</artifactId>
-            <version>1.1</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version>
         </dependency>
     </dependencies>
 
