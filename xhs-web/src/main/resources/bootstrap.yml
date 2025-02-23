@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: xhs
+  profiles:
+    active: dev # 切换环境
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS_HOST}:8848
+        namespace: ${NACOS_NAMESPACE} # 填命名空间id
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        # 如果开启认证的话需要用户名和密码
+        username: nacos
+        password: nacos
+      discovery:
+        server-addr: ${NACOS_HOST}:8848
+        namespace: ${NACOS_NAMESPACE} # 填命名空间id
+        # 如果开启认证的话需要用户名和密码
+        username: nacos
+        password: nacos
