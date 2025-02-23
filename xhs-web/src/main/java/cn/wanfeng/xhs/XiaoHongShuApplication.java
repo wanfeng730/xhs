@@ -6,6 +6,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -17,7 +19,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableDubbo
 @MapperScan(basePackages = {"cn.wanfeng.**.mapper"})
 @ComponentScan(basePackages = {"cn.wanfeng.**"})
-public class XiaoHongShuApplication {
+@ServletComponentScan(basePackages = "cn.wanfeng.xhs.filter")
+public class XiaoHongShuApplication extends SpringBootServletInitializer {
 
     private static final String BOOT_START_DISPLAY_FILE_PATH = "bootStartDisplay.txt";
 

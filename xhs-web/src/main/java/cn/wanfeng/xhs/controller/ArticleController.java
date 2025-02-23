@@ -35,7 +35,7 @@ public class ArticleController {
     }
 
     @Operation(summary = "文章列表（所有）")
-    @PostMapping("/get_all")
+    @GetMapping("/get_all")
     public List<ArticleDTO> getAll() {
         return articleService.getAll();
     }
